@@ -116,11 +116,11 @@ class Asse_Add_Headers {
     }
 
     public function get_expires_header( $post, $mtime, $defaults ) {
-        return str_replace( '+0000', 'GMT', gmdate('r', time() + $options['cache_max_age_seconds'] ) );
+        return str_replace( '+0000', 'GMT', gmdate('r', time() + $defaults['cache_max_age_seconds'] ) );
     }
 
     public function get_pragma_header( $post, $mtime, $defaults ) {
-        if ( intval($options['cache_max_age_seconds']) > 0 ) {
+        if ( intval($defaults['cache_max_age_seconds']) > 0 ) {
             return 'public';
         };
         return 'no-cache';
