@@ -84,7 +84,7 @@ class Asse_Add_Headers {
           $headers['Pragma'] = $this->get_pragma_header( $post, $mtime, $defaults );
       }
 
-      $headers = apply_filters( 'mup_add_headers_send', $headers );
+      $headers = apply_filters( 'asse_add_headers_send', $headers );
 
       if ( headers_sent() ) {
           // should error?!
@@ -152,9 +152,9 @@ class Asse_Add_Headers {
             return;
         }
 
-        $defaults = apply_filters( 'mup_add_headers_defaults', self::DEFAULTS );
+        $defaults = apply_filters( 'asse_add_headers_defaults', self::DEFAULTS );
 
-        if ( $wp_query->is_feed() || $wp_query->is_archive() || $wp_query->is_search() || $wp_query->is_home() ) {
+        if ( $wp_query->is_feed() || $wp_query->is_archive() || $wp_query->is_search() ) {
             $this->send_headers_for_archive( $defaults );
         } elseif ( $wp_query->is_singular() ) {
             $this->send_headers_for_object( $defaults );
