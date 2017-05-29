@@ -109,6 +109,18 @@ class Asse_Add_Headers {
            }
            exit;
       }
+
+      if ( true === $defaults['add_last_modified_header'] &&
+         isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) &&
+         strtotime( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) >= $mtime ) {
+           if ( true === $defaults['nginx_http_code'] || ! function_exists( 'http_response_code' ) ) {
+             header( 'HTTP/1.1 304 Not Modified' );
+           } else {
+             http_response_code( 304 );
+           }
+           exit;
+      }
+
     }
 
     public function get_last_modified_header( $post, $mtime, $defaults ) {
