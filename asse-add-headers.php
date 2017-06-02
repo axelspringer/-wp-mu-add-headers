@@ -142,7 +142,7 @@ class Asse_Add_Headers {
         global $wp;
 
         $to_hash = array( $mtime, $post->post_date_gmt, $post->guid, $post->ID, serialize( $wp->query_vars ) );
-        $etag = sha1( serialize( $to_hash ) );
+        $etag = crc32( serialize( $to_hash ) );
 
         if ( $defaults['generate_weak_etag'] === true ) {
           return sprintf( 'W/"%s"', $etag );
