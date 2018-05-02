@@ -1,1 +1,1 @@
-# -wp-mu-add-headers
+# wp-mu-add-headers
