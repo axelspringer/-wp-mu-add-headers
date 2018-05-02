@@ -1,5 +1,5 @@
 {
-    "name": "muplugin/asse-add-headers",
+    "name": "axelspringer/wp-mu-add-headers",
     "type": "wordpress-muplugin",
     "description": "Caching",
     "keywords": [
@@ -10,11 +10,15 @@
         {
             "name": "Sebastian Döll",
             "homepage": "http://www.axelspringer.de"
+        },
+        {
+            "name": "Mathias Witt",
+            "homepage": "http://www.axelspringer.de"
         }
     ],
-    "homepage": "https://as-stash.axelspringer.de/projects/WPMUP/repos/asse-add-headers",
-    "license": "proprietary",
+    "homepage": "https://github.com/axelspringer/wp-mu-add-headers",
+    "license": "Apache-2.0",
     "extra": {
-        "installer-name": "asse-add-headers"
+        "installer-name": "wp-mu-add-headers"
     }
 }
